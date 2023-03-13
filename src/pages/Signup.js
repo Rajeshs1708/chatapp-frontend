@@ -7,7 +7,6 @@ import { useSignupUserMutation } from '../services/appApi'
 
 function Signup () {
   const [name, setName] = useState('')
-  const [previewUrl, setPreviewUrl] = useState('')
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [signupUser, { isLoading, error }] = useSignupUserMutation()
@@ -42,7 +41,6 @@ function Signup () {
       )
       const urlData = await res.json()
       setUploadingImg(false)
-      setPreviewUrl(urlData.url)
       return urlData.url
     } catch (error) {
       setUploadingImg(false)
@@ -71,11 +69,11 @@ function Signup () {
             {error && <p className='alert alert-danger'>{error.data}</p>}
             <h1 className='text-center'>Create account</h1>
             <div className='signupProfilePic__container'>
-              <a href={previewUrl} target="_blank"><img
+              <img
                 src={imagePreview || botImg}
                 alt='profile'
                 className='signupProfilePic'
-              /></a>
+              />
               <label htmlFor='image-upload' className='image-upload-label'>
                 <FaPlusCircle className='add-picture-icon' />
               </label>
