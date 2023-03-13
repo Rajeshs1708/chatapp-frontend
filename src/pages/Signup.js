@@ -33,7 +33,7 @@ function Signup () {
     try {
       setUploadingImg(true)
       let res = await fetch(
-        `${process.env.REACT_APP_CLOUDINARY_URL}`,
+        `https://api.cloudinary.com/v1_1/dd6ou0uod/image/upload`,
         {
           method: 'post',
           body: data
