@@ -71,7 +71,7 @@ function Signup () {
             {error && <p className='alert alert-danger'>{error.data}</p>}
             <h1 className='text-center'>Create account</h1>
             <div className='signupProfilePic__container'>
-              <a href={previewUrl}><img
+              <a href={previewUrl} target="_blank"><img
                 src={imagePreview || botImg}
                 alt='profile'
                 className='signupProfilePic'
